@@ -25,6 +25,8 @@ Flight::route("/", function () {
   Flight::view()->render("home.latte", [
     "siteOwner" =>  $siteInfo["owner"],
     "siteTitle" =>  $siteInfo["owner"] . " | " . $siteInfo["tagline"],
+    "keywords" => $siteInfo["keywords"],
+    "siteUrl" => $siteInfo["siteUrl"],
     "pageTitle" => "Home",
     "github" => $siteInfo["github"],
     "projects" => $projects]);
