@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . "/../functions.php";
+
 Flight::map('projects', function () {
     $file = __DIR__ . '/../../data/projects.json';
     return json_decode(file_get_contents($file), true);
@@ -49,31 +51,7 @@ Flight::route('POST /contact-send', function () {
         exit('Thank you for your message!');
     }
 
-    $errors = [];
-
-    if ($name === '') {
-        $errors[] = "Name can not be empty.";
-    }
-
-    if ($email === '') {
-        $errors[] = "Email can not be empty.";
-    }
-
-    if ($message === '') {
-        $errors[] = "Message can not be empty.";
-    }
-
-    if (strlen($name) > 50) {
-        $errors[] = "Name can not be more than 50 characters.";
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Email must be a valid email address.";
-    }
-
-    if (strlen($message) > 500) {
-        $errors[] = "Message can not be more than 500 characters.";
-    }
+    $errors = getFormErrors($name, $email, $message);
 
     if (count($errors) > 0) {
         var_dump($errors);
@@ -81,7 +59,6 @@ Flight::route('POST /contact-send', function () {
     }
 
     echo "OK ";
-
     exit("Thank you for your message!");
 
     Flight::redirect('/');
