@@ -1,11 +1,70 @@
 {extends 'layout.latte'}
 
 {block content}
-    <h2>{$pageTitle}</h2>
-    <ul>
+
+<section
+  aria-labelledby="projects-heading"
+>
+<div>
+  <header>
+    <h2
+      id="projects-heading"
+    >
+      Featured Projects
+    </h2>
+    <p>
+      All of the projects are version controlled with Git and hosted on
+      my Linux VPS with Nginx.
+    </p>
+  </header>
+  <div>
     {foreach $projects as $project}
-        <li>{$project['title']}</li>
+      {var $name = $project['name']}
+      {var $image = $project['image']}
+      {var $githubUrl = $project['githubUrl']}
+      {var $demoUrl = $project['demoUrl']}
+      {var $description = $project['description']}
+      {var $technologies = $project['technologies']}
+      <article>
+        <img
+          src="{$image}"
+          alt="{$name}"
+          loading="lazy"
+          width="400"
+          height="192"
+        />
+        <div>
+          <h3>
+            {$name}
+          </h3>
+          <p>{$description}</p>
+          <div>
+            {foreach $technologies as $technology}
+              <span class="badge-{$technology['name']}">{$technology['name']}</span>
+            {/foreach}
+          </div>
+          <div>
+            <a
+              href="{$githubUrl}"
+              aria-label="View {$name} code on GitHub"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Code
+            </a>
+            <a
+              href="{$demoUrl}"
+              aria-label="Visit {$name} live demo"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </article>
     {/foreach}
-    </ul>
+  </div>
+</section>
 {/block}
 
