@@ -2,4 +2,4 @@ vendor/
 cache/
 data/projects.json
 data/site.json
-
+public/assets/images/
