@@ -1,8 +1,11 @@
 <?php
 
 require "../vendor/autoload.php";
+require_once "../app/functions.php";
 
 use Latte\Engine;
+
+startSession();
 
 Flight::register("view", Engine::class, [], function ($latte) {
     $latte->setTempDirectory(__DIR__ . '/../cache/');

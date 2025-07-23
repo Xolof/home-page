@@ -40,6 +40,10 @@
           </div>
         </div>
       </div>
+
+      {if $flash}
+        <p class="flash {$flash['type']}">{$flash['message']}</p>
+      {/if}
     </header>
 
     <main id="main-content" role="main">

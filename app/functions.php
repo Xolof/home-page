@@ -33,3 +33,55 @@ function getFormErrors(string $name, string $email, string $message): array
 
     return $errors;
 }
+
+/**
+ * Set a flash message.
+ */
+function setFlash(string $message, string $type): void
+{
+    $_SESSION["flash"] = [
+        "message" => $message,
+        "type"    => $type
+    ];
+}
+
+/**
+ * Get a flash message.
+ */
+function getFlash(): array
+{
+    $result = [];
+
+    if (isset($_SESSION["flash"])) {
+        $message = $_SESSION["flash"]["message"];
+        $type = $_SESSION["flash"]["type"];
+
+        $result = [
+            "message" => $message,
+            "type"    => $type
+        ];
+    }
+
+    unset($_SESSION["flash"]);
+
+    return $result;
+}
+
+/**
+ * Start up the session.
+ */
+function startSession(): void
+{
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'domain' => $_ENV['APP_DOMAIN'] ?? 'localhost',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Strict'
+    ]);
+
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+}

@@ -16,6 +16,8 @@ Flight::route("/", function () {
     $projects = Flight::projects();
     $siteInfo = Flight::siteInfo();
 
+    $flash = getFlash();
+
     Flight::view()->render("home.latte", [
         "siteOwner" =>  $siteInfo["owner"],
         "siteTitle" => $siteInfo["tagline"],
@@ -23,12 +25,15 @@ Flight::route("/", function () {
         "siteUrl" => $siteInfo["siteUrl"],
         "pageTitle" => "Home",
         "github" => $siteInfo["github"],
-        "projects" => $projects
+        "projects" => $projects,
+        "flash" => $flash
     ]);
 });
 
 Flight::route("/contact", function () {
     $siteInfo = Flight::siteInfo();
+
+    $flash = getFlash();
 
     Flight::view()->render("contact.latte", [
         "siteOwner" =>  $siteInfo["owner"],
@@ -36,7 +41,8 @@ Flight::route("/contact", function () {
         "keywords" => $siteInfo["keywords"],
         "siteUrl" => $siteInfo["siteUrl"],
         "pageTitle" => "Contact",
-        "github" => $siteInfo["github"]
+        "github" => $siteInfo["github"],
+        "flash" => $flash
     ]);
 });
 
@@ -55,12 +61,13 @@ Flight::route('POST /contact-send', function () {
     $errors = getFormErrors($name, $email, $message);
 
     if (count($errors) > 0) {
-        var_dump($errors);
-        exit("Invalid form data");
+        setFlash('Invalid form data.', 'error');
+        Flight::redirect('/contact');
+        exit();
     }
 
-    echo "OK ";
-    exit("Thank you for your message!");
+    // Send a notification email here.
+    setFlash('Thank you for your message!', 'success');
 
     Flight::redirect('/');
 });
