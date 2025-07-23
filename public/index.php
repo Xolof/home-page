@@ -24,25 +24,26 @@ Flight::route("/", function () {
     $siteInfo = Flight::siteInfo();
 
     Flight::view()->render("home.latte", [
-    "siteOwner" =>  $siteInfo["owner"],
-    "siteTitle" => $siteInfo["tagline"],
-    "keywords" => $siteInfo["keywords"],
-    "siteUrl" => $siteInfo["siteUrl"],
-    "pageTitle" => "Home",
-    "github" => $siteInfo["github"],
-    "projects" => $projects]);
+        "siteOwner" =>  $siteInfo["owner"],
+        "siteTitle" => $siteInfo["tagline"],
+        "keywords" => $siteInfo["keywords"],
+        "siteUrl" => $siteInfo["siteUrl"],
+        "pageTitle" => "Home",
+        "github" => $siteInfo["github"],
+        "projects" => $projects
+    ]);
 });
 
 Flight::route("/contact", function () {
     $siteInfo = Flight::siteInfo();
 
     Flight::view()->render("contact.latte", [
-    "siteOwner" =>  $siteInfo["owner"],
-    "siteTitle" => $siteInfo["tagline"],
-    "keywords" => $siteInfo["keywords"],
-    "siteUrl" => $siteInfo["siteUrl"],
-    "pageTitle" => "Contact",
-    "github" => $siteInfo["github"]
+        "siteOwner" =>  $siteInfo["owner"],
+        "siteTitle" => $siteInfo["tagline"],
+        "keywords" => $siteInfo["keywords"],
+        "siteUrl" => $siteInfo["siteUrl"],
+        "pageTitle" => "Contact",
+        "github" => $siteInfo["github"]
     ]);
 });
 
