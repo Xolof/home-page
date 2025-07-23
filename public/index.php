@@ -33,4 +33,17 @@ Flight::route("/", function () {
     "projects" => $projects]);
 });
 
+Flight::route("/contact", function () {
+    $siteInfo = Flight::siteInfo();
+
+    Flight::view()->render("contact.latte", [
+    "siteOwner" =>  $siteInfo["owner"],
+    "siteTitle" => $siteInfo["tagline"],
+    "keywords" => $siteInfo["keywords"],
+    "siteUrl" => $siteInfo["siteUrl"],
+    "pageTitle" => "Contact",
+    "github" => $siteInfo["github"]
+    ]);
+});
+
 Flight::start();
