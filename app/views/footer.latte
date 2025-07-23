@@ -1,0 +1,43 @@
+{block footer}
+
+<footer
+  class="bg-gray-800 text-gray-100 py-8 border-t border-gray-700"
+  role="contentinfo"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <div class="flex justify-center space-x-6 mb-6">
+        <a
+          href="mailto:oljo@protonmail.ch"
+          class="text-gray-400 hover:text-gray-100 transition-colors duration-200 focus:outline-none focus:text-gray-100"
+          aria-label="Send email to Olof Johansson"
+        >
+          <img
+            src="src/images/email-8-svgrepo-com.svg"
+            alt="Email icon"
+            class="w-auto h-10 object-cover"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href="{$github}"
+          class="text-gray-400 hover:text-gray-100 transition-colors duration-200 focus:outline-none focus:text-gray-100"
+          aria-label="Visit {$siteOwner}'s GitHub profile"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            src="src/images/github-142-svgrepo-com.svg"
+            alt="GitHub icon"
+            class="w-auto h-10 object-cover"
+            loading="lazy"
+          />
+        </a>
+      </div>
+      <p class="text-gray-500 text-sm">&copy; {date("Y")} {$siteOwner}</p>
+    </div>
+  </div>
+</footer>
+
+{/block}
+
