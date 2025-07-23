@@ -4,16 +4,16 @@
 
 <form method="POST" action="/contact-send">
   <label for="name">Name</label>
-  <input type="text" id="name" name="name" required />
+  <input type="text" id="name" name="name" maxlength="50" required />
 
   <label for="email">Email</label>
   <input type="email" id="email" name="email" required />
 
   <label for="fruit" class="fruit-label">Fruit</label>
-  <input type="text" id="fruit" name="fruit" />
+  <input type="text" id="fruit" name="fruit" maxlength="50" />
 
   <label for="message">Message</label>
-  <textarea id="message" name="message" required />
+  <textarea id="message" name="message" maxlength="500" required />
 
   <input type="submit" id="submit" name="submit" required />
 </form>
