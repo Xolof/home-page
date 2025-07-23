@@ -47,6 +47,7 @@ Flight::route('POST /contact-send', function () {
     $message = $request->data['message'];
     $fruit = $request->data['fruit'];
 
+    // If $fruit has been filled out we are likely dealing with a bot so then we exit.
     if ($fruit !== '') {
         exit('Thank you for your message!');
     }
