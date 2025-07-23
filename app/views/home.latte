@@ -40,7 +40,7 @@
           <p>{$description}</p>
           <div>
             {foreach $technologies as $technology}
-              <span class="badge-{$technology['name']}">{$technology['name']}</span>
+              <span class="badge-{strtolower($technology)}">{$technology}</span>
             {/foreach}
           </div>
           <div>
