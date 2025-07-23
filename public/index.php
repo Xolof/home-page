@@ -1,4 +1,5 @@
 <?php
+
 require "../vendor/autoload.php";
 
 use Latte\Engine;
@@ -9,20 +10,20 @@ Flight::register("view", Engine::class, [], function ($latte) {
 });
 
 Flight::map('projects', function () {
-   $file = __DIR__ . '/../data/projects.json';
-   return json_decode(file_get_contents($file), true);
+    $file = __DIR__ . '/../data/projects.json';
+    return json_decode(file_get_contents($file), true);
 });
 
 Flight::map('siteInfo', function () {
-   $file = __DIR__ . '/../data/site.json';
-   return json_decode(file_get_contents($file), true);
+    $file = __DIR__ . '/../data/site.json';
+    return json_decode(file_get_contents($file), true);
 });
 
 Flight::route("/", function () {
-  $projects = Flight::projects();
-  $siteInfo = Flight::siteInfo();
+    $projects = Flight::projects();
+    $siteInfo = Flight::siteInfo();
 
-  Flight::view()->render("home.latte", [
+    Flight::view()->render("home.latte", [
     "siteOwner" =>  $siteInfo["owner"],
     "siteTitle" =>  $siteInfo["owner"] . " | " . $siteInfo["tagline"],
     "keywords" => $siteInfo["keywords"],
@@ -33,4 +34,3 @@ Flight::route("/", function () {
 });
 
 Flight::start();
-
