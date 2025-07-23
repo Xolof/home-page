@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html>
   {include 'head.latte'}
-<body>
-<header>
-    <h1>{$siteTitle}</h1>
-    <nav>
-        <a href="/">Home</a> | 
-        <a href="/about">About</a> |
-        <a href="/contact">Contact</a>
-    </nav>
-</header>
-<main>
-    {block content}{/block}
-</main>
+  <body>
+    <a
+      href="#main-content"
+    >
+      Skip to main content
+    </a>
 
-{include 'footer.latte'}
+    <header role="banner">
+      <div>
+        <div>
+          <h1>
+            {$siteOwner}'s website
+          </h1>
+          <p>
+            {$siteTitle}
+          </p>
+          <div>
+            <a
+              href="/contact"
+              aria-label="Contact {$siteOwner}"
+            >
+              Contact
+            </a>
+            <a
+              href="{$github}"
+              aria-label="Visit {$siteOwner}'s GitHub profile"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-</body>
+    <main id="main-content" role="main">
+        {block content}{/block}
+    </main>
+
+    {include 'footer.latte'}
+
+  </body>
 </html>
-
