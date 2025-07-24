@@ -1,5 +1,7 @@
 <?php
 
+use App\FlashMiddleware;
+
 require_once __DIR__ . "/../functions.php";
 
 Flight::map('projects', function () {
@@ -12,39 +14,37 @@ Flight::map('siteInfo', function () {
     return json_decode(file_get_contents($file), true);
 });
 
-Flight::route("/", function () {
-    $projects = Flight::projects();
-    $siteInfo = Flight::siteInfo();
+Flight::group('', function () {
+    Flight::route("/", function () {
+        $projects = Flight::projects();
+        $siteInfo = Flight::siteInfo();
 
-    $flash = getFlash();
+        Flight::view()->render("home.latte", [
+            "siteOwner" =>  $siteInfo["owner"],
+            "siteTitle" => $siteInfo["tagline"],
+            "keywords" => $siteInfo["keywords"],
+            "siteUrl" => $siteInfo["siteUrl"],
+            "pageTitle" => "Home",
+            "github" => $siteInfo["github"],
+            "projects" => $projects,
+            "flash" => Flight::get('flash')
+        ]);
+    });
 
-    Flight::view()->render("home.latte", [
-        "siteOwner" =>  $siteInfo["owner"],
-        "siteTitle" => $siteInfo["tagline"],
-        "keywords" => $siteInfo["keywords"],
-        "siteUrl" => $siteInfo["siteUrl"],
-        "pageTitle" => "Home",
-        "github" => $siteInfo["github"],
-        "projects" => $projects,
-        "flash" => $flash
-    ]);
-});
+    Flight::route("/contact", function () {
+        $siteInfo = Flight::siteInfo();
 
-Flight::route("/contact", function () {
-    $siteInfo = Flight::siteInfo();
-
-    $flash = getFlash();
-
-    Flight::view()->render("contact.latte", [
-        "siteOwner" =>  $siteInfo["owner"],
-        "siteTitle" => $siteInfo["tagline"],
-        "keywords" => $siteInfo["keywords"],
-        "siteUrl" => $siteInfo["siteUrl"],
-        "pageTitle" => "Contact",
-        "github" => $siteInfo["github"],
-        "flash" => $flash
-    ]);
-});
+        Flight::view()->render("contact.latte", [
+            "siteOwner" =>  $siteInfo["owner"],
+            "siteTitle" => $siteInfo["tagline"],
+            "keywords" => $siteInfo["keywords"],
+            "siteUrl" => $siteInfo["siteUrl"],
+            "pageTitle" => "Contact",
+            "github" => $siteInfo["github"],
+            "flash" => Flight::get('flash')
+        ]);
+    });
+}, [new FlashMiddleware()]);
 
 Flight::route('POST /contact-send', function () {
     $request = Flight::request();

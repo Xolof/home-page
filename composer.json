@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/classes/"
+        }
+    },
     "require": {
         "flightphp/core": "^3.17",
         "latte/latte": "^3.0"
