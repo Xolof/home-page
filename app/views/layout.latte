@@ -3,41 +3,42 @@
   {include 'head.latte'}
   <body>
     <a
+    class="skip_link"
       href="#main-content"
     >
       Skip to main content
     </a>
 
-    <header role="banner">
+    <header role="banner" class="site_header">
       <div>
-        <div>
-          <h1>
-            <a
-              href="/"
-              aria-label="Home"
-            >
-              {$siteOwner}'s website
-            </a>
-          </h1>
-          <p>
-            {$siteTitle}
-          </p>
-          <div>
-            <a
-              href="/contact"
-              aria-label="Contact {$siteOwner}"
-            >
-              Contact
-            </a>
-            <a
-              href="{$github}"
-              aria-label="Visit {$siteOwner}'s GitHub profile"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              GitHub Profile
-            </a>
-          </div>
+        <h1 class="site_heading">
+          <a
+            href="/"
+            aria-label="Home"
+          >
+            {$siteOwner}'s website
+          </a>
+        </h1>
+        <p class="site_title">
+          {$siteTitle}
+        </p>
+        <div class="header_links">
+          <a
+            href="/contact"
+            aria-label="Contact {$siteOwner}"
+            class="contact_link"
+          >
+            Contact
+          </a>
+          <a
+            href="{$github}"
+            aria-label="Visit {$siteOwner}'s GitHub profile"
+            rel="noopener noreferrer"
+            target="_blank"
+            class="github_link"
+          >
+            GitHub Profile
+          </a>
         </div>
       </div>
 

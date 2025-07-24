@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 28px;
+    color: #272727;
+}
+
+.flash {
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.error {
+    background-color: lightcoral;
+}
+
+.projects {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+}
+
+.project {
+    padding: 1rem;
+    width: 100%;
+}
+
+.project_image {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.icon {
+    width: 2rem;
+    height: auto;
+}
+
+.skip_link {
+    display: none;
+}
+
+.footer_links {
+    display: flex;
+    justify-content: center;
+}
+
+.footer_links a {
+    margin-right: 1rem;
+}
+
+.copyright {
+    text-align: center;
+    padding: 1rem;
+}
+
+.project_links,
+.header_links {
+    display: flex;
+    justify-content: center;
+}
+
+.contact_form input,
+.contact_form textarea {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    width: 100%;
+}
+
+.contact_form button {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    width: 100%;
+    cursor: pointer;
+    background-color:#a7ff50;
+    border: 2px solid #a7ff50;
+    border-radius: 2px;
+}
+
+header,
+main,
+footer {
+    max-width: 968px;
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 auto;
+}
+
+.site_header {
+    padding: 2.4rem 2.4rem 1rem;
+}
+
+.sub_header {
+    padding: 1rem;
+}
+
+.sub_header h2,
+.sub_header p {
+    text-align: center;
+}
+
+footer {
+    padding: 2.4rem;
+}
+
+.site_title {
+    font-size: 1.2rem;
+}
+
+.site_heading,
+.site_title,
+.header_links,
+.contact_form {
+    padding: 0.4rem 1rem;
+    margin: 0.4rem;
+}
+
+.header_links a,
+.project_links a {
+    margin-right: 1em;
+}
+
+.site_heading,
+.site_title {
+    text-align: center;
+}
+
+.project_links {
+    margin: 1rem 0;
+}
+
+.header_links .contact_link {
+    background-color: #a7ff50;
+    padding: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #272727;}
+
+.header_links .github_link {
+    background-color: #a7ff50;
+    padding: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #272727;
+}
+
+.project_links a {
+    background-color:#a7ff50;
+    padding: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #272727;
+}
+
+h1,
+h2,
+h3,
+.project_image {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: normal;
+}
+
+a {
+    color: #3b7700;
+}
+
+@media screen and (width >= 750px) {
+    .project {
+        width: 50%;
+    }
+}

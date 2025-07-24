@@ -2,7 +2,7 @@
 
 {block content}
 
-<form method="POST" action="/contact-send">
+<form method="POST" action="/contact-send" class="contact_form">
   <label for="name">Name</label>
   <input type="text" id="name" name="name" maxlength="50" required />
 
@@ -15,7 +15,7 @@
   <label for="message">Message</label>
   <textarea id="message" name="message" maxlength="500" required />
 
-  <input type="submit" id="submit" name="submit" required />
+  <button type="submit" id="submit" name="submit">Submit</button>
 </form>
 
 <style>

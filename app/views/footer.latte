@@ -2,10 +2,11 @@
 
 <footer
   role="contentinfo"
+  class="site_footer"
 >
   <div>
     <div>
-      <div>
+      <div class="footer_links">
         <a
           href="mailto:oljo@protonmail.ch"
           aria-label="Send email to Olof Johansson"
@@ -14,6 +15,7 @@
             src="assets/images/email-8-svgrepo-com.svg"
             alt="Email icon"
             loading="lazy"
+            class="icon"
           />
         </a>
         <a
@@ -26,10 +28,11 @@
             src="assets/images/github-142-svgrepo-com.svg"
             alt="GitHub icon"
             loading="lazy"
+            class="icon"
           />
         </a>
       </div>
-      <p>&copy; {date("Y")} {$siteOwner}</p>
+      <p class="copyright">&copy; {date("Y")} {$siteOwner}</p>
     </div>
   </div>
 </footer>

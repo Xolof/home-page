@@ -6,7 +6,7 @@
   aria-labelledby="projects-heading"
 >
 <div>
-  <header>
+  <header class="sub_header">
     <h2
       id="projects-heading"
     >
@@ -17,7 +17,7 @@
       my Linux VPS with Nginx.
     </p>
   </header>
-  <div>
+  <div class="projects">
     {foreach $projects as $project}
       {var $name = $project['name']}
       {var $image = $project['image']}
@@ -25,13 +25,14 @@
       {var $demoUrl = $project['demoUrl']}
       {var $description = $project['description']}
       {var $technologies = $project['technologies']}
-      <article>
+      <article class="project">
         <img
           src="{$image}"
           alt="{$name}"
           loading="lazy"
           width="400"
           height="192"
+          class="project_image"
         />
         <div>
           <h3>
@@ -43,7 +44,7 @@
               <span class="badge-{strtolower($technology)}">{$technology}</span>
             {/foreach}
           </div>
-          <div>
+          <div class="project_links">
             <a
               href="{$githubUrl}"
               aria-label="View {$name} code on GitHub"
