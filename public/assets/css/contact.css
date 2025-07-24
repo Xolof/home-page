@@ -23,4 +23,5 @@
 .header_links .github_link:hover,
 .project_links a:hover {
     background-color: var(--accent-bright);
+    border: 2px solid var(--accent-bright);
 }
