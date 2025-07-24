@@ -27,8 +27,8 @@ function getFormErrors(string $name, string $email, string $message): array
         $errors[] = "Email must be a valid email address.";
     }
 
-    if (strlen($message) > 500) {
-        $errors[] = "Message can not be more than 500 characters.";
+    if (strlen($message) > 1000) {
+        $errors[] = "Message can not be more than 1000 characters.";
     }
 
     return $errors;
