@@ -45,21 +45,28 @@
             {/foreach}
           </div>
           <div class="project_links">
-            <a
-              href="{$githubUrl}"
-              aria-label="View {$name} code on GitHub"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              View Code
-            </a>
+
+            {if $githubUrl}
+              <a
+                href="{$githubUrl}"
+                aria-label="View {$name} code on GitHub"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View Code
+              </a>
+            {/if}
             <a
               href="{$demoUrl}"
               aria-label="Visit {$name} live demo"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Live Demo
+              {if $githubUrl}
+                Live Demo
+              {else}
+                Visit the website
+              {/if}
             </a>
           </div>
         </div>
