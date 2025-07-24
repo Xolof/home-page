@@ -1,0 +1,5 @@
+@media screen and (width >=750px) {
+    .project {
+        width: 49%;
+    }
+}

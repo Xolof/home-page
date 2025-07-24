@@ -1,0 +1,26 @@
+.contact_form input,
+.contact_form textarea {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    width: 100%;
+}
+
+.contact_form button {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 2px;
+    border: 2px solid var(--accent-dark);
+    transition: 0.3s all ease;
+    box-shadow: var(--box-shadow-button);
+}
+
+.contact_form button:hover,
+.header_links .contact_link:hover,
+.header_links .github_link:hover,
+.project_links a:hover {
+    background-color: var(--accent-bright);
+}

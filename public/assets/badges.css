@@ -1,0 +1,103 @@
+.badges {
+    display: flex;
+    flex-flow: wrap;
+    margin: 0.8rem 0;
+}
+
+.badge {
+    font-size: 0.9em;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 0.4rem;
+    border-radius: 20px;
+    margin-right: 0.2rem;
+}
+
+.leaflet-js {
+    background-color: #4fff38;
+    color: #23661b;
+    border: 1px solid #23661b;
+}
+
+.typescript {
+    background-color: #ffff38;
+    color: #4e4e00;
+    border: 1px solid #6d6d00;
+}
+
+.react {
+    background-color: #38d1ff;
+    color: #103a47;
+    border: 1px solid #154f61;
+}
+
+.sass {
+    background-color: #ff38cd;
+    color: #581447;
+    border: 1px solid #581447;
+}
+
+.php {
+    background-color: #9a16b4;
+    color: #fbe7ff;
+    border: 1px solid #fbe7ff;
+}
+
+.wordpress {
+    background-color: #1b4ceb;
+    color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+}
+
+.mysql {
+    background-color: #102d8d;
+    color: #f2f5ff;
+    border: 1px solid #f2f5ff;
+}
+
+.sqlite {
+    background-color: #102d8d;
+    color: #f2f5ff;
+    border: 1px solid #f2f5ff;
+}
+
+.laravel {
+    background-color: #c90000;
+    color: #ffe4e4;
+    border: 1px solid #ffe4e4;
+}
+
+.rest-api {
+    background-color: #c4c4c4;
+    color: #4d4d4d;
+    border: 1px solid #5c5c5c;
+}
+
+.huggingface-api {
+    background-color: #ffc400;
+    color: #413100;
+    border: 1px solid #413100;
+}
+
+.tailwind-css {
+    background-color: #00ffc8;
+    color: #004637;
+    border: 1px solid #004637;
+}
+
+.picnic-css {
+    background-color: #006eff;
+    color: #f2f5ff;
+    border: 1px solid #f2f5ff;
+}
+
+.symfony {
+    background-color: #141414;
+    color: #c9c9c9;
+    border: 1px solid #c9c9c9;
+}
+
+.sage {
+    background-color: #7500a3;
+    color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+}
