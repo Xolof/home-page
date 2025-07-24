@@ -1,3 +1,11 @@
+:root {
+  --text-color: var(--text-color);
+  --accent: #b1ff63;
+  --accent-dark: #75ad3d;
+  --accent-bright: chartreuse;
+  --box-shadow-button: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +15,7 @@
 body {
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     line-height: 28px;
-    color: #272727;
+    color: var(--text-color);
 }
 
 .flash {
@@ -86,19 +94,19 @@ body {
     padding: 0.8rem 1rem;
     width: 100%;
     cursor: pointer;
-    background-color: #b1ff63;
-    border: 2px solid #b1ff63;
+    background-color: var(--accent);
+    border: 2px solid var(--accent);
     border-radius: 2px;
-    border: 2px solid #75ad3d;
+    border: 2px solid var(--accent-dark);
     transition: 0.3s all ease;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--box-shadow-button);
 }
 
 .contact_form button:hover,
 .header_links .contact_link:hover,
 .header_links .github_link:hover,
 .project_links a:hover {
-    background-color: chartreuse;
+    background-color: var(--accent-bright);
 }
 
 header,
@@ -114,7 +122,7 @@ footer {
 }
 
 .sub_header {
-    padding: 1rem;
+    padding: 1rem 1rem 1.4rem;
 }
 
 .sub_header h2,
@@ -153,34 +161,34 @@ footer {
 }
 
 .header_links .contact_link {
-    background-color: #b1ff63;
+    background-color: var(--accent);
     padding: 0.8rem 1rem;
     border-radius: 4px;
     text-decoration: none;
-    color: #272727;
-    border: 2px solid #75ad3d;
+    color: var(--text-color);
+    border: 2px solid var(--accent-dark);
     transition: 0.3s all ease;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--box-shadow-button);
 }
 
 .header_links .github_link {
     padding: 0.8rem 1rem;
     border-radius: 4px;
     text-decoration: none;
-    color: #272727;
-    border: 2px solid #75ad3d;
+    color: var(--text-color);
+    border: 2px solid var(--accent-dark);
     transition: 0.3s all ease;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--box-shadow-button);
 }
 
 .project_links a {
     padding: 0.8rem 1rem;
     border-radius: 4px;
     text-decoration: none;
-    color: #272727;
-    border: 2px solid #75ad3d;
+    color: var(--text-color);
+    border: 2px solid var(--accent-dark);
     transition: 0.3s all ease;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--box-shadow-button);
 }
 
 h1,
