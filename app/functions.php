@@ -70,12 +70,12 @@ function getFlash(): array
 /**
  * Start up the session.
  */
-function startSession(): void
+function startSession(string $domain): void
 {
     session_set_cookie_params([
         'lifetime' => 0,
         'path' => '/',
-        'domain' => $_ENV['APP_DOMAIN'] ?? 'localhost',
+        'domain' => $domain ?? 'localhost',
         'secure' => true,
         'httponly' => true,
         'samesite' => 'Strict'

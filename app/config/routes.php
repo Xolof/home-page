@@ -15,6 +15,9 @@ Flight::map('siteInfo', function () {
     return json_decode(file_get_contents($file), true);
 });
 
+$domain = Flight::siteInfo()['domain'];
+startSession($domain);
+
 Flight::group('', function () {
     Flight::route("/", function () {
         $projects = Flight::projects();
