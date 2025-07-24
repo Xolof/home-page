@@ -54,7 +54,7 @@ Flight::route('POST /contact-send', function () {
     $request = Flight::request();
     $name = $request->data['name'];
     $email = $request->data['email'];
-    $message = htmlentities($request->data['message']);
+    $message = htmlspecialchars($request->data['message']);
     $fruit = $request->data['fruit'];
 
     // If $fruit has been filled out we are likely dealing with a bot so then we exit.
