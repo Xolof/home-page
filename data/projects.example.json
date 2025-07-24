@@ -1,0 +1,25 @@
+[
+  {
+    "name": "My To-Do App",
+    "image": "/assets/images/todo.avif",
+    "githubUrl": "https://github.com/exampleuser/todoapp",
+    "demoUrl": "https://todoapp.example.com/",
+    "description": "A very useful Todo app.",
+    "technologies": [
+      "React",
+      "Python"
+    ]
+  },
+  {
+    "name": "Disruptive Web App",
+    "image": "/assets/images/disrupt.avif",
+    "githubUrl": "https://github.com/exampleuser/disruptive",
+    "demoUrl": "https://disrupt.example.com/",
+    "description": "This app will disrupt the whole industry.",
+    "technologies": [
+      "PHP",
+      "CSS",
+      "HTML"
+    ]
+  }
+]

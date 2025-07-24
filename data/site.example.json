@@ -1,0 +1,10 @@
+{
+  "owner": "Moomin Troll",
+  "tagline": "Full Stack Disrupter",
+  "email": "moomin@example.com",
+  "github": "https://github.com/exampleuser",
+  "keywords": "full stack developer, web development, React, PHP, Laravel, Symfony, Wordpress, portfolio, software engineer",
+  "siteUrl": "https://example.com",
+  "fromEmail": "noreply@example.com",
+  "domain": "example.com"
+}
