@@ -91,6 +91,7 @@ body {
     border-radius: 2px;
     border: 2px solid #75ad3d;
     transition: 0.3s all ease;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .contact_form button:hover,
@@ -159,26 +160,27 @@ footer {
     color: #272727;
     border: 2px solid #75ad3d;
     transition: 0.3s all ease;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .header_links .github_link {
-    background-color: #b1ff63;
     padding: 0.8rem 1rem;
     border-radius: 4px;
     text-decoration: none;
     color: #272727;
     border: 2px solid #75ad3d;
     transition: 0.3s all ease;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .project_links a {
-    background-color: #b1ff63;
     padding: 0.8rem 1rem;
     border-radius: 4px;
     text-decoration: none;
     color: #272727;
     border: 2px solid #75ad3d;
     transition: 0.3s all ease;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 h1,
