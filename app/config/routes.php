@@ -74,9 +74,13 @@ Flight::route('POST /contact-send', function () {
     $receiver = $siteInfo['email'];
     $fromEmail = $siteInfo['fromEmail'];
     $subject = "New submission of contact form.";
+    $concatMessage = <<<EOT
+        Message from $name, $email
+        $message
+    EOT;
 
     $mailer = new Mailer();
-    $mailer->send($receiver, $subject, $message, $fromEmail);
+    $mailer->send($receiver, $subject, $concatMessage, $fromEmail);
 
     setFlash('Thank you for your message!', 'success');
 
