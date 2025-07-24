@@ -1,6 +1,7 @@
 <?php
 
 use App\FlashMiddleware;
+use App\Mailer;
 
 require_once __DIR__ . "/../functions.php";
 
@@ -50,7 +51,7 @@ Flight::route('POST /contact-send', function () {
     $request = Flight::request();
     $name = $request->data['name'];
     $email = $request->data['email'];
-    $message = $request->data['message'];
+    $message = htmlentities($request->data['message']);
     $fruit = $request->data['fruit'];
 
     // If $fruit has been filled out we are likely dealing with a bot so then we exit.
@@ -66,7 +67,14 @@ Flight::route('POST /contact-send', function () {
         exit();
     }
 
-    // Send a notification email here.
+    $siteInfo = Flight::siteInfo();
+    $receiver = $siteInfo['email'];
+    $fromEmail = $siteInfo['fromEmail'];
+    $subject = "New submission of contact form.";
+
+    $mailer = new Mailer();
+    $mailer->send($receiver, $subject, $message, $fromEmail);
+
     setFlash('Thank you for your message!', 'success');
 
     Flight::redirect('/');
