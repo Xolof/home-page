@@ -76,7 +76,7 @@ Flight::route('POST /contact-send', function () {
     $subject = "New submission of contact form.";
     $concatMessage = <<<EOT
     <p>From: $name</p>
-    <p>Email: $email</p>
+    <p>Email: <a href="mailto:$email">$email</a></p>
     <p>Message: $message</p>
     EOT;
 
