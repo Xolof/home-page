@@ -39,7 +39,7 @@
             {$name}
           </h3>
           <p>{$description}</p>
-          <div>
+          <div class="badges">
             {foreach $technologies as $technology}
               <span class="badge {strtolower(str_replace([' ', '.'], '-', $technology))}">{$technology}</span>
             {/foreach}
