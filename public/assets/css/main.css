@@ -102,7 +102,7 @@ footer {
 
 .header_links .contact_link,
 .header_links .github_link {
-    padding: 0.8rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     text-decoration: none;
     color: var(--text-color);
