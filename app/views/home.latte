@@ -41,7 +41,7 @@
           <p>{$description}</p>
           <div>
             {foreach $technologies as $technology}
-              <span class="badge-{strtolower($technology)}">{$technology}</span>
+              <span class="badge {strtolower(str_replace([' ', '.'], '-', $technology))}">{$technology}</span>
             {/foreach}
           </div>
           <div class="project_links">
