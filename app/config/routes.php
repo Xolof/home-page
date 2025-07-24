@@ -52,8 +52,8 @@ Flight::group('', function () {
 
 Flight::route('POST /contact-send', function () {
     $request = Flight::request();
-    $name = $request->data['name'];
-    $email = $request->data['email'];
+    $name = htmlspecialchars($request->data['name']);
+    $email = htmlspecialchars($request->data['email']);
     $message = htmlspecialchars($request->data['message']);
     $fruit = $request->data['fruit'];
 
