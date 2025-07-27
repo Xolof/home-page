@@ -7,7 +7,7 @@ namespace App;
  */
 class FlashMiddleware
 {
-    public function before()
+    public function before(): void
     {
         \Flight::set('flash', getFlash());
     }

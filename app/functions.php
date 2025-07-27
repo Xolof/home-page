@@ -2,6 +2,7 @@
 
 /**
  * Get an array with errors from the form data.
+ * @return array<string> An arrray with error messages.
  */
 function getFormErrors(string $name, string $email, string $message): array
 {
@@ -47,6 +48,7 @@ function setFlash(string $message, string $type): void
 
 /**
  * Get a flash message.
+ * @return array<string, string> A nested array with a flash message and the type of message.
  */
 function getFlash(): array
 {

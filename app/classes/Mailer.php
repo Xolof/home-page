@@ -4,7 +4,7 @@ namespace App;
 
 class Mailer
 {
-    public function send(string $receiver, string $subject, string $message, string $from)
+    public function send(string $receiver, string $subject, string $message, string $from): void
     {
         $headers = [
             'From' => $from,
