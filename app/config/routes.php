@@ -19,6 +19,20 @@ $domain = Flight::siteInfo()['domain'];
 startSession($domain);
 
 Flight::group('', function () {
+    Flight::map('notFound', function () {
+        $siteInfo = Flight::siteInfo();
+        Flight::view()->render('404.latte', [
+            'title' => 'Page Not Found',
+            "siteOwner" =>  $siteInfo["owner"],
+            "siteTitle" => $siteInfo["tagline"],
+            "keywords" => $siteInfo["keywords"],
+            "siteUrl" => $siteInfo["siteUrl"],
+            "pageTitle" => "404 Not Found",
+            "github" => $siteInfo["github"],
+            "flash" => Flight::get('flash')
+        ]);
+    });
+
     Flight::route("/", function () {
         $projects = Flight::projects();
         $siteInfo = Flight::siteInfo();
