@@ -40,6 +40,11 @@ body {
     display: none;
 }
 
+.searxng_link {
+  text-align: center;
+  padding: 0 1rem 1rem 1rem;
+}
+
 .footer_links {
     display: flex;
     justify-content: center;
